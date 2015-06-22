@@ -36,13 +36,9 @@ if($_SESSION['user'] > 0){
 
 	if($result->num_rows > 0){
  		while($row = $result->fetch_assoc()){
-			//echo "" . $row["domain"] . "-" . $row["id"] . "<br>";
-			$temp = $row["id"];
-			$_GET["id"] = $temp;
+			$tempid = $row["id"];
                         $tempname = $row["domain"];
-                        //echo "hey--$temp<br>";
-                        //echo "<a href=" . $temp . ">$temp</a><br>";
-                        echo "<a href=site.php?site_id=" . $temp . ">$tempname</a><br>";
+                        echo "<a href=site.php?site_id=" . $tempid . ">$tempname</a><br>";
  		}
 	}
 	else
@@ -69,12 +65,8 @@ else{
 	echo "<br><b>Here are your domain: </b><br>";
         if($result->num_rows > 0){
                 while($row = $result->fetch_assoc()){
-                        //echo "" . $row["domain"] . "-" . $row["id"] . "<br>";
 			$temp = $row["id"];
-			$_GET["id"] = $temp;
 			$tempname = $row["domain"];
-			//echo "hey--$temp<br>";
-			//echo "<a href=" . $temp . ">$temp</a><br>";
 			echo "<a href=site.php?site_id=" . $temp . ">$tempname</a><br>";
                 }
         }
